@@ -1,3 +1,7 @@
+python3.11 -m venv venv
+pip install -e .
+pip install -e ../../.
+
 # <span style="font-size:larger;">MACE</span>
 
 [![GitHub release](https://img.shields.io/github/release/ACEsuit/mace.svg)](https://GitHub.com/ACEsuit/mace/releases/)
