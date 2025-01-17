@@ -371,6 +371,9 @@ def atoms_to_ext_graph_torch(atoms, cutoff: float, num_message_passing: int) -> 
     data.edge_src_cell0 = ext_node_index_in_cell0[ext_senders]
     data.edge_dst_cell0 = ext_node_index_in_cell0[ext_receivers]
     data.edge_vec = ext_node_positions[ext_receivers] - ext_node_positions[ext_senders]
+    data.shifts = torch.from_numpy(
+        np.dot(ext_node_unit_shifts_from_cell0, atoms.cell.array)
+    )
 
     return data
 
